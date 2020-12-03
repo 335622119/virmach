@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="author" content="mengkun">
+    <meta name="generator" content="KodCloud">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>VirMach 闪购监控</title>
+    <!-- 不支持IE8及以下版本浏览器 -->
+    <!--[if lte IE 8]>
+        <script>
+            alert("珍爱生命，远离低版本 IE！");
+            window.location.href = "http://lab.mkblog.cn/music/plugns/killie/"
+        </script>
+    <![endif]-->
+    <!-- font-awesome 图标字体 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+    
+    <!--load bootstrap.min.css-->
+    <link href="static_pack/Bootstrap-4-4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- 核心样式文件 -->
+    <link rel="stylesheet" href="static_pack/index.css">
+    <!-- 分页样式文件 -->
+    <link rel="stylesheet" href="static_pack/paging/paging.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+                <a class="navbar-brand" href="/">
+                    <!--<span itemprop="name">VirMach</span>-->
+                    <img src="/static_pack/images/logo.png" />
+                </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">实时监控 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/2019.html">2019年数据</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/2018.html">2018年数据</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">自动下单</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      更多
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">留言板</a>
+                      <a class="dropdown-item" href="#">帮助</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">关于</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="输入关键字" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查询</button>
+            </form>
+          </div>
+      </div>
+    </nav>
+    
+    <div class="container">
+        <section class="section">
+            <a name="product">
+            </a>
+            <h3 class="dt-sub-title">
+                2020年VirMach闪购实时数据
+            </h3>
+            <p class="dt-title-describe" id="msg">
+                <i class="fa fa-spinner fa-spin fa-1x fa-fw" aria-hidden="true"></i> 数据监控中，页面将在<span id="vir_time">1</span>秒后刷新，请稍等...
+            </p>
+            <div class="dt-item-box" id="dt-item-box">
+            </div>
+            <!-- dt-item-box -->
+            <div class="dt-item-box" id="dt-item-box-table" style="display: none;">
+            </div>
+            <!-- dt-item-box-table -->
+            <div id="page" class="pager clearfix"></div>
+        </section>
+        <!-- class="section" -->
+    </div>
+    <!-- class=container -->
+    
+    <footer class="footer">
+        <div class="count">
+            『您是本站第
+            <img src="//www.amazingcounters.com/counter.php?i=3216768&c=9650617" />
+            位访客』
+        </div>
+        <div class="social">
+            <img src="/static_pack/images/aq/txy.png" width="80"> 
+            <img src="/static_pack/images/aq/360.png" width="80"> 
+            <img src="/static_pack/images/aq/aly.png" width="80"> 
+            <img src="/static_pack/images/aq/ypy.png" width="80"> 
+            <img src="/static_pack/images/aq/wxpay.png" width="80"> 
+            <img src="/static_pack/images/aq/zfb.png" width="80"> 
+        </div>
+        <div class="web-record">
+            Copyright © 2018-2020 
+            <a href="http://www.0ddt.com/" target="_blank" rel="nofollow">
+                段彤网络
+            </a>. All Rights Reserved
+        </div>
+    </footer>
+    <!-- 返回顶部 -->
+    <div class="dt-uptop" title="点击返回顶部">
+    </div>
+    <!--load jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--load bootstrap.min.js-->
+    <script src="static_pack/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
+    <!--load pagination.js-->
+    <script src="static_pack/pagination/pagination.js"></script>
+    <!--load paging.js-->
+    <script src="static_pack/paging/paging.js"></script>
+    
+    <script>
+        var pageIndex = 0;     //页面索引初始值   
+        var isLoad = true;     //防止多次加载数据
+        var serverUrl = '/api.php?y=2020';
+        var totalData = 0;
+        $(function() {
+            //加载数据
+            LoadPager();
+            // 监听滚动变化
+            $(window).scroll(function() {
+                if ($(window).scrollTop() < 300) {
+                    $(".dt-uptop").removeClass("show");
+                } else {
+                    $(".dt-uptop").addClass("show");
+                }
+            });
+            // 返回顶部
+            $(".dt-uptop").click(function() {
+                $("html, body").animate({
+                    scrollTop: 0
+                },
+                "normal");
+                return false;
+            });
+            //自动刷新
+            refreshTime();
+        });
+        
+        //刷新数据倒计时
+        function refreshTime() {
+            var time_span = document.getElementById("vir_time");
+            var time_val = time_span.innerHTML;
+            var int_val = parseInt(time_val);//返回由字符串转换得到的整数。
+            var new_int_val = int_val - 1;
+            if (new_int_val > -1) {
+                time_span.innerHTML = new_int_val;
+            } 
+            else 
+            {
+                time_span.innerHTML = 3;
+                if(pageIndex == 1){
+                    $("#msg").show();
+                    $("#page").PageReload();
+                }else{
+                    if (totalData == 0) {
+                        LoadPager();
+                    }else{
+                        $("#msg").hide();
+                    }
+                }
+            }
+    		setTimeout("refreshTime()", 1000);
+        }
+        
+        //加载数据
+        function LoadPager(){
+            //分页数据获取
+            $("#page").zPager({
+            	url: serverUrl,
+            	htmlBox: $('#dt-item-box-table'),
+            	btnShow: false,
+            	dataRender: function(data, opts, total){
+            	    if (totalData != total) {
+                        $("#dt-item-box").html(data);
+                        $('#load').hide();
+            	    }
+                    totalData = total;
+                    pageIndex = opts.current;
+            	}
+            });
+        }
+    </script>
+</body>
+
+</html>
